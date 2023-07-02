@@ -1,0 +1,30 @@
+.loading {
+    background-color: #51b4e8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.img {
+    animation: loader 6s linear infinite;
+}
+
+.loading-text {
+    color: #fff;
+    margin-top: 1rem;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,136 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --background-color-ligth: #d5f3ff;
+    --background-color-ligth2: #51b4e8;
+    --background-color-dark: #53388f;
+    --background-color-dark2: #2f2958;
+    --background-color-box-ligth: #e5f2ff;
+    --background-color-box-ligth2: #d5f3ff;
+    --background-color-box-dark: #5836b3;
+    --background-color-box-dark2: #362ab4;
+    --shadow: rgba(0, 0, 0, 0.273);
+    --botton-ligth: #38a0d8;
+    --botton-dark: #7d69f1;
+    --letter1: #026eed;
+    --letter2: #56a5f1;
+}
+
+body {
+    background: radial-gradient(circle, var(--background-color-ligth) 0%, var(--background-color-ligth2));
+}
+
+.app {
+    color: #fff;
+    font-weight: lighter;
+    font-size: 25px;
+    margin-top: 3rem;
+    margin-left: 3rem;
+}
+
+.container-sun {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.box-sun {
+    background: linear-gradient(var(--background-color-box-ligth) 0%, var(--background-color-box-ligth2) 0%);
+    width: 400px;
+    height: 350px;
+    border-radius: 2rem;
+    box-shadow: 0 8px 2px var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.head-sun {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+    margin: 1rem auto 0;
+}
+
+.head-sun > h1 {
+    color: var(--letter1);
+    font-weight: lighter;
+    font-size: 59px;
+}
+
+.icon {
+    width: 180px;
+}
+
+.text-sun {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.text-sun > p > span {
+    color: var(--letter2);
+    font-weight: 600;
+    font-size: 17px;
+    margin-left: 2rem;
+}
+
+.text-sun > p {
+    color: var(--letter2);
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.foot-sun {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.foot-text {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.foot-sun > h3 {
+    color: var(--letter1);
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.foot-text > p {
+    color: var(--letter1);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+button {
+    border: none;
+    background-color: var(--botton-ligth);
+    color: #fff;
+    font-size: 15px;
+    box-shadow: 0 5px 2px var(--shadow);
+    padding: 1rem 2.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+}
