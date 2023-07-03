@@ -3,6 +3,7 @@ import axios from "axios"
 import { useEffect, useState } from 'react'
 import Card from './components/card'
 import Loader from './components/Loader'
+import CardDark from './components/CardarDark'
 
 function App() {
 
@@ -11,6 +12,11 @@ function App() {
   const [isLoader, setIsLoader] = useState(true)
   const [unit, setUnit] = useState(true)
   const [text, setText] = useState(true)
+  const [sun, isSun] = useState(true)
+  const [dark, isDark] = useState(false)
+  const [ground, setGround] = useState("background: radial-gradient(circle, #d5f3ff 0%, #51b4e8 100%)")
+  const [button, setbutton] = useState("button")
+  const [ball, setball] = useState('ball')
 
   useEffect(() => {
 
@@ -33,6 +39,7 @@ function App() {
         .then((resp) => {
 
           isStart(resp.data)
+          console.log(resp.data);
 
           setTimeout(() => {
             setIsLoader(!true)
@@ -70,13 +77,40 @@ function App() {
     setText(!text)
   }
 
+  const sunDark = () => {
+    isSun(!sun)
+    isDark(!dark)
+    if (ground === "background: radial-gradient(circle, #d5f3ff 0%, #51b4e8 100%)") {
+      setGround("background: radial-gradient(circle, #53388f 0%, #2f2958 100%)")
+    } else {
+      setGround("background: radial-gradient(circle, #d5f3ff 0%, #51b4e8 100%)")
+    }
+    if (button === "button") {
+      setbutton("button-dark")
+    } else {
+      setbutton("button")
+    }
+    if (ball === "ball") {
+      setball("ball-dark")
+    } else {
+      setball("ball")
+    }
+  }
+
+  document.body.style = ground
+
   return (
     <>
     {isLoader && <Loader/>}
 
-    <h1 className='app'>Weather app</h1>
+    <div className='main'>
+      <h1 className='app'>Weather app</h1>
+      <div className='run'>
+        <div className={ball} onClick={sunDark}></div>
+      </div>
+    </div>
 
-    <Card  
+    {sun && <Card  
     temp = {unit === true? Math.floor(start?.main.temp - 273.15) + " °": Math.floor(start?.main.temp - 273.15 * 1.8 + 32)  + " °"}
     icon = {icon}
     wind = {start?.wind.speed + " m/s"}
@@ -85,10 +119,21 @@ function App() {
     name = {start?.name}
     sys = {start?.sys.country}
     wea = {start?.weather[0].main}
-    />
+    />}
+
+    {dark && <CardDark
+    temp = {unit === true? Math.floor(start?.main.temp - 273.15) + " °": Math.floor(start?.main.temp - 273.15 * 1.8 + 32)  + " °"}
+    icon = {icon}
+    wind = {start?.wind.speed + " m/s"}
+    cloud = {start?.clouds.all + " %"}
+    pre = {start?.main.pressure + " hPa"}
+    name = {start?.name}
+    sys = {start?.sys.country}
+    wea = {start?.weather[0].main}
+    />}
 
     <div className='btn'>
-      <button onClick={changeInfo}>{text === true? "Cambiar a F°": "Cambiar a C°"}</button>
+      <button className={button} onClick={changeInfo}>{text === true? "Cambiar a F°": "Cambiar a C°"}</button>
     </div>
     </>
   )

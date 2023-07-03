@@ -22,7 +22,14 @@
 }
 
 body {
-    background: radial-gradient(circle, var(--background-color-ligth) 0%, var(--background-color-ligth2));
+    background: radial-gradient(circle, var(--background-color-ligth) 0%, var(--background-color-ligth2) 100%);
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .app {
@@ -31,6 +38,33 @@ body {
     font-size: 25px;
     margin-top: 3rem;
     margin-left: 3rem;
+}
+
+.run {
+    background-color: #ffff;
+    width: 80px;
+    height: 2rem;
+    border-radius: 20px;
+    margin-top: 3rem;
+    margin-right: 3rem;
+    box-shadow: 0 4px 2px var(--shadow);
+}
+
+.ball {
+    background-color: var(--botton-ligth);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.ball-dark {
+    background-color: var(--botton-dark);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin-left: 3rem;
+    cursor: pointer;
 }
 
 .container-sun {
@@ -42,7 +76,7 @@ body {
 }
 
 .box-sun {
-    background: linear-gradient(var(--background-color-box-ligth) 0%, var(--background-color-box-ligth2) 0%);
+    background: linear-gradient(var(--background-color-box-ligth) 0%, var(--background-color-box-ligth2) 100%);
     width: 400px;
     height: 350px;
     border-radius: 2rem;
@@ -124,7 +158,7 @@ body {
     margin-top: 2rem;
 }
 
-button {
+.button {
     border: none;
     background-color: var(--botton-ligth);
     color: #fff;
@@ -133,4 +167,87 @@ button {
     padding: 1rem 2.5rem;
     border-radius: 25px;
     cursor: pointer;
+}
+
+.button-dark {
+    border: none;
+    background-color: var(--botton-dark);
+    color: #fff;
+    font-size: 15px;
+    box-shadow: 0 5px 2px var(--shadow);
+    padding: 1rem 2.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.box-dark {
+    background: linear-gradient(var(--background-color-box-dark) 0%, var(--background-color-box-dark2) 100%);
+    width: 400px;
+    height: 350px;
+    border-radius: 2rem;
+    box-shadow: 0 8px 2px var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.head-dark {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+    margin: 1rem auto 0;
+}
+
+.head-dark > h1 {
+    color: #fff;
+    font-weight: lighter;
+    font-size: 59px;
+}
+
+.text-dark {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.text-dark > p > span {
+    color: #f4eded;
+    font-weight: 600;
+    font-size: 17px;
+    margin-left: 2rem;
+}
+
+.text-dark > p {
+    color: #f4eded;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.foot-dark {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.foot-text-dark {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.foot-dark > h3 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.foot-text-dark > p {
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
 }
