@@ -69,7 +69,7 @@ function App() {
   } else if (start?.weather[0].main === "Snow") {
     icon = "/icon/8.svg"
   } else if (start?.weather[0].main === "Mist") {
-    icon = "/icon/mist"
+    icon = "/icon/9.svg"
   }
 
   const changeInfo = () => {
