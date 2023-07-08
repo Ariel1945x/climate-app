@@ -111,7 +111,7 @@ function App() {
     </div>
 
     {sun && <Card  
-    temp = {unit === true? Math.floor(start?.main.temp - 273.15) + " °": Math.floor(start?.main.temp - 273.15 * 1.8 + 32)  + " °"}
+    temp = {unit === true? Math.floor(start?.main.temp - 273.15) + " °": Math.floor(((start?.main.temp * 9) / 5) - 459,67)  + " °"}
     icon = {icon}
     wind = {start?.wind.speed + " m/s"}
     cloud = {start?.clouds.all + " %"}
@@ -122,7 +122,7 @@ function App() {
     />}
 
     {dark && <CardDark
-    temp = {unit === true? Math.floor(start?.main.temp - 273.15) + " °": Math.floor(start?.main.temp - 273.15 * 1.8 + 32)  + " °"}
+    temp = {unit === true? Math.floor(start?.main.temp - 273.15) + " °": Math.floor(start?.main.temp * 9 / 5 - 459,67)  + " °"}
     icon = {icon}
     wind = {start?.wind.speed + " m/s"}
     cloud = {start?.clouds.all + " %"}
